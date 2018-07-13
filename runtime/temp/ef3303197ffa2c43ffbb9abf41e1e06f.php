@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"C:\wamp64\www\tp5\blog\public/../application/admin\view\login\index.html";i:1531488162;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"C:\wamp64\www\tp5\blog\public/../application/admin\view\login\index.html";i:1531496201;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" class="bg-dark">
 <head>
@@ -26,16 +26,17 @@
             <form method="post" action="" class="panel-body wrapper-lg">
                 <div class="form-group">
                     <label class="control-label">用户名</label>
-                    <input required type="text" class="form-control input-lg" name="username">
+                    <input required type="text" class="form-control input-lg" name="admin_username">
                 </div>
                 <div class="form-group">
                     <label class="control-label">密 码</label>
-                    <input required type="password"  class="form-control input-lg" name="password">
+                    <input required type="password"  class="form-control input-lg" name="admin_cpassword">
                 </div>
                 <div class="form-group">
                     <label class="control-label">验证码</label>
                     <input type="text"  class="form-control input-lg col-md-6" name="code">
-                    <img src="" onclick="this.src=this.src+'&'+Math.random()">
+                    <!--验证码的点击刷新原理就是让验证码的src不断改变，请求地址-->
+                    <img src="<?php echo captcha_src(); ?>" alt="captcha" onclick="this.src=this.src+'?'+Math.random()"/>
                 </div>
                 <button type="submit" class="btn btn-primary">登陆后台</button>
             </form>

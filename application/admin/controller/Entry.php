@@ -4,13 +4,14 @@ namespace app\admin\controller;
 
 use think\Controller;
 
-class Entry extends Controller
+class Entry extends Common
 {
     //首页
     public function index()
     {
         //加载模板文件
         return $this->fetch();
+
     }
     public function base()
     {
