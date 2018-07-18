@@ -18,6 +18,7 @@ class Login extends Controller
         //dump($data);
         //处理登录请求数据
         if(request()->isPost()){
+
             //halt($_POST);
             $res = (new Admin())->login(input("post."));
             if ($res['valid']){
@@ -28,6 +29,6 @@ class Login extends Controller
                 $this->error($res['msg']);exit;
             }
         }
-        return $this->fetch('index');
+        return $this->fetch("index");
     }
 }
