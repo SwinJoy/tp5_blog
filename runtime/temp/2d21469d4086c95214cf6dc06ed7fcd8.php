@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:85:"C:\phpStudy\PHPTutorial\WWW\blog\public/../application/admin\view\category\store.html";i:1531982184;s:65:"C:\phpStudy\PHPTutorial\WWW\blog\application\admin\view\base.html";i:1531982213;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:85:"C:\phpStudy\PHPTutorial\WWW\blog\public/../application/admin\view\category\store.html";i:1532011176;s:65:"C:\phpStudy\PHPTutorial\WWW\blog\application\admin\view\base.html";i:1531982213;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -182,7 +182,7 @@
 
 </ol>
 <ul class="nav nav-tabs" role="tablist">
-    <li><a href="">栏目列表</a></li>
+    <li><a href="<?php echo url('index'); ?>">栏目列表</a></li>
     <li class="active"><a href="">添加栏目</a></li>
 </ul>
 <form class="form-horizontal" id="form" action="" method="post">
@@ -194,13 +194,13 @@
             <div class="form-group">
                 <label for="" class="col-sm-2 control-label">栏目名称</label>
                 <div class="col-sm-9">
-                    <input type="text" name="cname"  class="form-control" placeholder="">
+                    <input type="text" name="cate_name"  class="form-control" placeholder="">
                 </div>
             </div>
             <div class="form-group">
                 <label for="" class="col-sm-2 control-label">所属栏目</label>
                 <div class="col-sm-9">
-                    <select class="js-example-basic-single form-control" name="pid">
+                    <select class="js-example-basic-single form-control" name="cate_pid">
                         <option value="0">顶级栏目</option>
                     </select>
                 </div>
@@ -209,7 +209,7 @@
             <div class="form-group">
                 <label for="" class="col-sm-2 control-label">栏目排序</label>
                 <div class="col-sm-9">
-                    <input type="number" name="csort"  class="form-control" placeholder="">
+                    <input type="number" name="cate_sort"  class="form-control" placeholder="">
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:85:"C:\phpStudy\PHPTutorial\WWW\blog\public/../application/admin\view\category\index.html";i:1531981959;s:65:"C:\phpStudy\PHPTutorial\WWW\blog\application\admin\view\base.html";i:1531981700;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:85:"C:\phpStudy\PHPTutorial\WWW\blog\public/../application/admin\view\category\index.html";i:1531981959;s:65:"C:\phpStudy\PHPTutorial\WWW\blog\application\admin\view\base.html";i:1531982213;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +10,6 @@
     <link href="/static/admin/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="/static/admin/js/jquery.min.js"></script>
     <script src="/static/admin/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
-    <script src="resource/hdjs/app/util.js"></script>
-    <script src="resource/hdjs/require.js"></script>
-    <script src="resource/hdjs/app/config.js"></script>
     <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
