@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:82:"C:\phpStudy\PHPTutorial\WWW\blog\public/../application/admin\view\entry\index.html";i:1531924261;s:65:"C:\phpStudy\PHPTutorial\WWW\blog\application\admin\view\base.html";i:1531980436;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:82:"C:\phpStudy\PHPTutorial\WWW\blog\public/../application/admin\view\entry\index.html";i:1531924261;s:65:"C:\phpStudy\PHPTutorial\WWW\blog\application\admin\view\base.html";i:1531981700;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,7 +87,7 @@
                     </a>
                 </div>
                 <ul class="list-group menus collapse in" id="collapseExample">
-                    <a href="" class="list-group-item">
+                    <a href="<?php echo url('admin/category/index'); ?>" class="list-group-item">
                         <i class="fa fa-certificate" aria-hidden="true"></i>
                         <span class="pull-right" href=""></span>
                         栏目列表

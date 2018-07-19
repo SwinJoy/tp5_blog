@@ -1,14 +1,15 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:85:"C:\phpStudy\PHPTutorial\WWW\blog\public/../application/admin\view\category\store.html";i:1531982184;s:65:"C:\phpStudy\PHPTutorial\WWW\blog\application\admin\view\base.html";i:1531982213;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
     <title>后盾网武斌博客网后台管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link href="__STATIC__/admin/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="__STATIC__/admin/css/site.css" rel="stylesheet">
-    <link href="__STATIC__/admin/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="__STATIC__/admin/js/jquery.min.js"></script>
-    <script src="__STATIC__/admin/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <link href="/static/admin/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/admin/css/site.css" rel="stylesheet">
+    <link href="/static/admin/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="/static/admin/js/jquery.min.js"></script>
+    <script src="/static/admin/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
     <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -53,11 +54,11 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="fa fa-w fa-user"></i>
-                            {:session('admin.admin_username')}
+                            <?php echo session('admin.admin_username'); ?>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="{:url('admin/entry/pass')}">修改密码</a></li>
+                            <li><a href="<?php echo url('admin/entry/pass'); ?>">修改密码</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="">退出</a></li>
                         </ul>
@@ -83,7 +84,7 @@
                     </a>
                 </div>
                 <ul class="list-group menus collapse in" id="collapseExample">
-                    <a href="{:url('admin/category/index')}" class="list-group-item">
+                    <a href="<?php echo url('admin/category/index'); ?>" class="list-group-item">
                         <i class="fa fa-certificate" aria-hidden="true"></i>
                         <span class="pull-right" href=""></span>
                         栏目列表
@@ -168,8 +169,55 @@
         </div>
         <!--右侧主体区域部分 start-->
         <div class="col-xs-12 col-sm-9 col-lg-10">
-            {block name='content'}
-            {/block}
+            
+
+<ol class="breadcrumb" style="background-color: #f9f9f9;padding:8px 0;margin-bottom:10px;">
+    <li>
+        <a href=""><i class="fa fa-cogs"></i>
+            栏目管理</a>
+    </li>
+    <li class="active">
+        <a href="">栏目添加</a>
+    </li>
+
+</ol>
+<ul class="nav nav-tabs" role="tablist">
+    <li><a href="">栏目列表</a></li>
+    <li class="active"><a href="">添加栏目</a></li>
+</ul>
+<form class="form-horizontal" id="form" action="" method="post">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">栏目管理</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">栏目名称</label>
+                <div class="col-sm-9">
+                    <input type="text" name="cname"  class="form-control" placeholder="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">所属栏目</label>
+                <div class="col-sm-9">
+                    <select class="js-example-basic-single form-control" name="pid">
+                        <option value="0">顶级栏目</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">栏目排序</label>
+                <div class="col-sm-9">
+                    <input type="number" name="csort"  class="form-control" placeholder="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">确定</button>
+</form>
+
+
         </div>
     </div>
     <!--右侧主体区域部分结束 end-->

@@ -1,14 +1,15 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"C:\phpStudy\PHPTutorial\WWW\blog\public/../application/admin\view\entry\base.html";i:1531441558;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
     <title>后盾网武斌博客网后台管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link href="__STATIC__/admin/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="__STATIC__/admin/css/site.css" rel="stylesheet">
-    <link href="__STATIC__/admin/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="__STATIC__/admin/js/jquery.min.js"></script>
-    <script src="__STATIC__/admin/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <link href="/static/admin/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/admin/css/site.css" rel="stylesheet">
+    <link href="/static/admin/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="/static/admin/js/jquery.min.js"></script>
+    <script src="/static/admin/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
     <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -25,6 +26,20 @@
             color: #337ab7;
         }
     </style>
+    <script>
+        //模块配置项
+        var hdjs = {
+            //框架目录
+            'base': '/static/node_modules/hdjs',
+            //上传文件后台地址
+            'uploader': "<?php echo url('system/component/uploader'); ?>",
+            //获取文件列表的后台地址
+            'filesLists': " <?php echo url('system/component/filesLists'); ?>?",
+        };
+    </script>
+    <script src="/static/node_modules/hdjs/app/util.js"></script>
+    <script src="/static/node_modules/hdjs/require.js"></script>
+    <script src="/static/node_modules/hdjs/config.js"></script>
 </head>
 <body>
 <div class="container-fluid admin-top">
@@ -53,11 +68,11 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="fa fa-w fa-user"></i>
-                            {:session('admin.admin_username')}
+                            <?php echo session('admin.admin_username'); ?>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="{:url('admin/entry/pass')}">修改密码</a></li>
+                            <li><a href="<?php echo url('admin/entry/pass'); ?>">修改密码</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="">退出</a></li>
                         </ul>
@@ -73,7 +88,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-lg-2 left-menu">
             <div class="panel panel-default" id="menus">
-                <!--栏目管理 star-->
+                <!--栏目管理 start-->
                 <div class="panel-heading" role="button" data-toggle="collapse" href="#collapseExample"
                      aria-expanded="false" aria-controls="collapseExample"
                      style="border-top: 1px solid #ddd;border-radius: 0%">
@@ -83,7 +98,7 @@
                     </a>
                 </div>
                 <ul class="list-group menus collapse in" id="collapseExample">
-                    <a href="{:url('admin/category/index')}" class="list-group-item">
+                    <a href="<?php echo url('admin/category/index'); ?>" class="list-group-item">
                         <i class="fa fa-certificate" aria-hidden="true"></i>
                         <span class="pull-right" href=""></span>
                         栏目列表
@@ -100,12 +115,11 @@
                     </a>
                 </div>
                 <ul class="list-group menus collapse in" id="collapseExample2">
-                    <a href="" class="list-group-item">
+                    <a href="<?php echo url('admin/tag/index'); ?>" class="list-group-item">
                         <i class="fa fa-tags" aria-hidden="true"></i>
                         <span class="pull-right" href=""></span>
                         标签列表
                     </a>
-
                 </ul>
                 <!--标签管理 end-->
 
@@ -118,19 +132,18 @@
                     </a>
                 </div>
                 <ul class="list-group menus collapse in" id="collapseExample3">
-                    <a href="" class="list-group-item">
+                    <a href="<?php echo url('admin/article/index'); ?>" class="list-group-item">
                         <i class="fa fa-align-center" aria-hidden="true"></i>
                         <span class="pull-right" href=""></span>
                         文章列表
                     </a>
-                    <a href="" class="list-group-item">
+                    <a href="<?php echo url('admin/article/recycle'); ?>" class="list-group-item">
                         <i class="fa fa-recycle" aria-hidden="true"></i>
                         <span class="pull-right" href=""></span>
                         回收站
                     </a>
                 </ul>
                 <!--文章管理 end-->
-
                 <!--友链管理 start-->
                 <div class="panel-heading" role="button" data-toggle="collapse" href="#collapseExample4"
                      aria-expanded="false" aria-controls="collapseExample">
@@ -140,15 +153,14 @@
                     </a>
                 </div>
                 <ul class="list-group menus collapse in" id="collapseExample4">
-                    <a href="" class="list-group-item">
+                    <a href="<?php echo url('admin/link/index'); ?>" class="list-group-item">
                         <i class="fa fa-link" aria-hidden="true"></i>
                         <span class="pull-right" href=""></span>
                         友链首页
                     </a>
                 </ul>
                 <!--友链管理 end-->
-
-                <!--站点管理 start-->
+                <!--站点管理-->
                 <div class="panel-heading" role="button" data-toggle="collapse" href="#collapseExample5"
                      aria-expanded="false" aria-controls="collapseExample">
                     <h4 class="panel-title">站点管理</h4>
@@ -157,7 +169,7 @@
                     </a>
                 </div>
                 <ul class="list-group menus collapse in" id="collapseExample5">
-                    <a href="" class="list-group-item">
+                    <a href="<?php echo url('admin/webset/index'); ?>" class="list-group-item">
                         <i class="fa fa-wrench" aria-hidden="true"></i>
                         <span class="pull-right" href=""></span>
                         网站配置
@@ -168,8 +180,7 @@
         </div>
         <!--右侧主体区域部分 start-->
         <div class="col-xs-12 col-sm-9 col-lg-10">
-            {block name='content'}
-            {/block}
+            
         </div>
     </div>
     <!--右侧主体区域部分结束 end-->
@@ -184,6 +195,3 @@
 </div>
 </body>
 </html>
-
-
-
