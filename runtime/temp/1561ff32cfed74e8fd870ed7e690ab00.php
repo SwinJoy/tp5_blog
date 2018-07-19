@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:82:"C:\phpStudy\PHPTutorial\WWW\blog\public/../application/admin\view\entry\index.html";i:1531924261;s:65:"C:\phpStudy\PHPTutorial\WWW\blog\application\admin\view\base.html";i:1531925179;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:82:"C:\phpStudy\PHPTutorial\WWW\blog\public/../application/admin\view\entry\index.html";i:1531924261;s:65:"C:\phpStudy\PHPTutorial\WWW\blog\application\admin\view\base.html";i:1531980436;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +61,7 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="changePass.html">修改密码</a></li>
+                            <li><a href="<?php echo url('admin/entry/pass'); ?>">修改密码</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="">退出</a></li>
                         </ul>
